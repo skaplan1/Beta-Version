@@ -1,0 +1,59 @@
+140201051 — Onur Karakaya
+
+--Sonuçlar
+
+okuma(r) klasör içeriği görülebilir mi? dosyaları listeleyebilir mi?
+
+yazma(w) listelenen dosyaları silebilir mi? dosya oluşturup klasör ekleyebilir mi?
+
+çalıştırma(x) dosyaları çalıştırabilir mi? klasöre erişebilir mi?
+
+sorularına yanıt arıyoruz.
+
+image::Screenshot_1.png[]
+ilk olarak sanal makineye yüklediğimiz işletim sistemini başlatıyorum ve karşımıza kullanıcı adım 'sk' ve aynı şekilde paralomızı girdikten sonra şekildeki ekran geliyor.
+
+image::Screenshot_2.png[]
+Dosya ve klasorde okuma, yazma veya çalıştırma izni kontrollerini test edebilmemiz için elimizde klasör ve dosya gerekli. Bunun için -mkdir komutuyla klasor adında bir klasör oluşturuyorum.
+
+image::Screenshot_3.png[]
+Dosya oluşturmak için ise -touch komutunu kullanarak dosya adında bir dosya oluşturuyorum.
+
+image::Screenshot_4.png[]
+Dosya adındaki dosyamıza +r-wx komutuyla okuma izni verip yazma ve çalıştırma izinlerini kapatıyorum.
+
+image::Screenshot_5.png[]
+Klasor adındaki klasörümüze +r-wx komutuyla okuma izni verip yazma ve çalıştırma izinlerini kapatıyorum.
+
+image::Screenshot_6.png[]
+Dosyamızda okuma izni olup olmadığını -cat komutunu kullanarak test ediyoruz.Enter a bastıktan sonra herhangi bir uyarı vermediği için okuma iznimizin olduğunu kontrol etmiş oluyorum.
+
+image::Screenshot_7.png[]
+Klasörümüzde okuma izni olup olmadığını ls -la komutlarını kullanarak test ediyorum.
+
+image::Screenshot_8.png[]
+Dosyamıza +w -r komutuyla yazma izni verip okuma iznini kaldırıyoruz.Enter a bastığımızda bize uyarı verdiğini görüyoruz.Çünkü okuma iznimiz olmadan yazma iznimiz olsa bile bu izni kullanamyız.
+
+
+1image::Screenshot_9.png[]
+Klasörümüze +x -w komutuyla çalıştırma izni verip yazma iznini kaldırıyoruz.Ama okuma izni olmadığı için ilgili dizine erişemez.
+
+=== Özetle
+
+* okuma(r)
+
+ 	klasör içeriği görülebilir mi? ->evet
+ 	
+ 	dosyaları listeleyebilir mi? ->evet
+
+* yazma(w)
+
+ 	listelenen dosyaları silebilir mi?->hayır
+ 	
+ 	dosya oluşturup klasör ekleyebilir mi?->hayır
+
+* çalıştırma(x)
+
+ 	dosyaları çalıştırabilir mi?->hayır
+ 	
+ 	klasöre erişebilir mi?->hayır
